@@ -114,9 +114,9 @@
 <div class="login-popup">
   <div class="form-popup" id="popupForm">
     <form action="/action_page.php" class="form-container">
-      <h2>Ajoutez une entreprise</h2>
+      <h2>Ajoutez un véhicule</h2>
       <label for="email">
-        <strong>Entreprise</strong>
+        <strong>Véhicule</strong>
       </label>
       <input type="text" id="email" placeholder="Prenom" name="email" required />
       <button type="submit" class="btn">Ajouter</button>
