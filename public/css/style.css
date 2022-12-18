@@ -11,7 +11,7 @@ body{
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/*------------------------------------------------------------Connexion---------------------------------------------------------*/
+/*------------------------------------------------------------ConnexionController---------------------------------------------------------*/
 .element {
     margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
     transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
@@ -156,11 +156,11 @@ body{
 .section_table table th{
     background-color: #297fb95b;
     padding: 10px;
-}      
+}
 .section_table table td{
   background-color: #b8e3ff5b !important;
   padding: 5px;
-}   
+}
 table{
   border-collapse: collapse;
   margin: auto;
