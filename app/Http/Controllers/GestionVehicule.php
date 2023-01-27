@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class ConnexionController extends Controller
+class GestionVehicule extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,14 @@ class ConnexionController extends Controller
      */
     public function index()
     {
-        return view("connexion",array());
+        $response = Http::get('http://localhost/www/PPE/public/index.php/api/cars');
+        var_dump($response->status());
+        $cars = json_decode($response->body());
+
+
+
+              return view("gestionVehicule", ['tableauDeVoiture' => $cars]);
+
     }
 
     /**
@@ -25,16 +32,6 @@ class ConnexionController extends Controller
     public function create()
     {
         //
-    }
-
-    public function connect(Request $request)
-    {
-        $email = $_GET['email'];
-        $password = $_GET['password'];
-        $query = Http::post('http://localhost/www/PPE/public/index.php/api/connexion',array("email" => $email, "password" => $password));
-        var_dump($query->status());
-        var_dump($query->body());
-        //  return view("gestionUtilisateur",array());
     }
 
     /**

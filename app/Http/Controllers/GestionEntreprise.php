@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
-class ConnexionController extends Controller
+class GestionEntreprise extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class ConnexionController extends Controller
      */
     public function index()
     {
-        return view("connexion",array());
+        return view("gestionEntreprise",array());
     }
 
     /**
@@ -25,16 +24,6 @@ class ConnexionController extends Controller
     public function create()
     {
         //
-    }
-
-    public function connect(Request $request)
-    {
-        $email = $_GET['email'];
-        $password = $_GET['password'];
-        $query = Http::post('http://localhost/www/PPE/public/index.php/api/connexion',array("email" => $email, "password" => $password));
-        var_dump($query->status());
-        var_dump($query->body());
-        //  return view("gestionUtilisateur",array());
     }
 
     /**

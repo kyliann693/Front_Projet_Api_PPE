@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnexionController;
+use App\Http\Controllers\GestionUtilisateur;
+use App\Http\Controllers\GestionEntreprise;
+use App\Http\Controllers\GestionVehicule;
+use App\Http\Controllers\GestionAgence;
+use App\Http\Controllers\GestionAgences;
+use App\Http\Controllers\Inscription;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +25,15 @@ Route::get('/', function () {
 });
 
 Route::get("/connexion",[ConnexionController::class,"index"]);
+Route::get("/queryToConnect",[ConnexionController::class,"connect"]);
+Route::get("/inscription",[Inscription::class,"index"]);
+Route::get("/inscription/load",[Inscription::class,"create"]);
+
+Route::get("/gestion/utilisateur",[GestionUtilisateur::class,"index"]);
+Route::get("/gestion/entreprise",[GestionEntreprise::class,"index"]);
+Route::get("/gestion/vehicule",[GestionVehicule::class,"index"]);
+Route::get("/gestion/agence",[GestionAgence::class,"index"]);
+Route::get("/gestion/agences",[GestionAgences::class,"index"]);
+
+
+

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class ConnexionController extends Controller
+class Inscription extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ConnexionController extends Controller
      */
     public function index()
     {
-        return view("connexion",array());
+        return view("inscription",array());
     }
 
     /**
@@ -24,17 +24,21 @@ class ConnexionController extends Controller
      */
     public function create()
     {
-        //
-    }
+        var_dump($_GET['nom']);
+        $nom = $_GET['nom'];
+        $prenom = $_GET['prenom'];
+        $mail = $_GET['mail'];
+        $password  = $_GET['password'];
+        var_dump($mail);
+        $response = Http::post('http://localhost/www/PPE/public/index.php/inscription', [
+            'name' => "$prenom",
+            'email' => "$mail",
+            'password' => "$password",
+        ]);
+       // var_dump($response);
+        var_dump($response->status());
+        var_dump($response->clientError());
 
-    public function connect(Request $request)
-    {
-        $email = $_GET['email'];
-        $password = $_GET['password'];
-        $query = Http::post('http://localhost/www/PPE/public/index.php/api/connexion',array("email" => $email, "password" => $password));
-        var_dump($query->status());
-        var_dump($query->body());
-        //  return view("gestionUtilisateur",array());
     }
 
     /**
@@ -45,7 +49,7 @@ class ConnexionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
