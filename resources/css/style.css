@@ -11,7 +11,10 @@ body{
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/*------------------------------------------------------------ConnexionController---------------------------------------------------------*/
+button{
+  cursor: pointer;
+}
+/*------------------------------------------------------------Connexion---------------------------------------------------------*/
 .element {
     margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
     transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
@@ -143,8 +146,9 @@ body{
 }
 .center_submit_nav{
     width: fit-content;
-    margin: auto;
-    margin-top: 200%;
+    position: absolute;
+    top: 90%;
+    left: 3%;
 }
 .flex{
     display: flex;
@@ -156,11 +160,11 @@ body{
 .section_table table th{
     background-color: #297fb95b;
     padding: 10px;
-}
+}      
 .section_table table td{
   background-color: #b8e3ff5b !important;
   padding: 5px;
-}
+}   
 table{
   border-collapse: collapse;
   margin: auto;
