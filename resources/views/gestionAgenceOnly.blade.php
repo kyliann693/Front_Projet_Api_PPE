@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/style.css">
+    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="flex">
@@ -11,12 +11,14 @@
         <nav class="side-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="./utilisateur"><i class="fas fa-tachometer-alt"></i><span class="menu-text">Gestion utilisateur</span></a></li>
-                <li class="nav-item"><a href="./entreprise"><i class="fas fa-user"></i><span class="menu-text">Gestion entreprise</span></a></li>
+                <li class="nav-item"><a href="./fournisseur"><i class="fas fa-user"></i><span class="menu-text">Gestion fournisseur</span></a></li>
                 <li class="nav-item"><a href="./vehicule"><i class="fas fa-file-alt"></i><span class="menu-text">Gestion véhicule</span></a></li>
                 <li class="nav-item"><a href="./agences"><i class="fas fa-play "></i><span class="menu-text">Gestion des agences</span></a></li>
                 <li class="nav-item active"><a href="./agence"><i class="fas fa-sign-out-alt"></i><span class="menu-text">Gestion d'une agence</span></a></li>
                 <div class="center_submit_nav">
-                    <button class="submit_deconnexion">Déconnexion</button>
+                    <a href="{{ route('connexion') }}" >
+                        <button class="submit_deconnexion">Déconnexion</button>
+                    </a>
                 </div>
             </ul>
         </nav>

@@ -29,12 +29,19 @@ class ConnexionController extends Controller
 
     public function connect(Request $request)
     {
-        $email = $_GET['email'];
-        $password = $_GET['password'];
+        $email = $request->email;
+        $password = $request->password;
         $query = Http::post('http://localhost/www/PPE/public/index.php/api/connexion',array("email" => $email, "password" => $password));
-        var_dump($query->status());
-        var_dump($query->body());
-        //  return view("gestionUtilisateur",array());
+        $decode = json_decode($query->body());
+        if(isset($decode->token)){
+
+            var_dump($decode->token);
+            var_dump($decode->user->email);
+            return redirect('/gestion/utilisateur');
+        }
+        else {
+            return view("connexion",array('error' => 'adresse mail ou mot de passe incorrect'));
+        }
     }
 
     /**

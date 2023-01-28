@@ -13,7 +13,7 @@ class GestionAgence extends Controller
      */
     public function index()
     {
-        return view("gestionAgence",array());
+        return view("gestionAgenceOnly",array());
     }
 
     /**

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
-class GestionEntreprise extends Controller
+class GestionFournisseur extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,14 @@ class GestionEntreprise extends Controller
      */
     public function index()
     {
-        return view("gestionEntreprise",array());
+        $response = Http::get('http://localhost/www/PPE/public/index.php/api/vendors');
+        var_dump($response->status());
+        $cars = json_decode($response->body());
+
+
+
+        return view("gestionVehicule", ['tableauDeVoiture' => $cars]);
+
     }
 
     /**

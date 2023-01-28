@@ -11,12 +11,14 @@
         <nav class="side-nav">
             <ul class="nav-menu">
                 <li class="nav-item active"><a href="./utilisateur"><i class="fas fa-tachometer-alt"></i><span class="menu-text">Gestion utilisateur</span></a></li>
-                <li class="nav-item"><a href="./entreprise"><i class="fas fa-user"></i><span class="menu-text">Gestion entreprise</span></a></li>
+                <li class="nav-item"><a href="./fournisseur"><i class="fas fa-user"></i><span class="menu-text">Gestion fournisseur</span></a></li>
                 <li class="nav-item"><a href="./vehicule"><i class="fas fa-file-alt"></i><span class="menu-text">Gestion véhicule</span></a></li>
                 <li class="nav-item"><a href="./agences"><i class="fas fa-play "></i><span class="menu-text">Gestion des agences</span></a></li>
                 <li class="nav-item"><a href="./agence"><i class="fas fa-sign-out-alt"></i><span class="menu-text">Gestion d'une agence</span></a></li>
                 <div class="center_submit_nav">
+                    <a href="{{ route('connexion') }}" >
                     <button class="submit_deconnexion">Déconnexion</button>
+                    </a>
                 </div>
             </ul>
         </nav>

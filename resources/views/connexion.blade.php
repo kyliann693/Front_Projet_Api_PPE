@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body class="body_connexion">
 <div class="element">
@@ -13,7 +13,8 @@
                 <img src="../img/parc_auto_bis.jpg" class="img_auto" height="400" width="300">
             </div>
             <div class="block_form">
-                <form  action="./queryToConnect" method="GET">
+                <form  action="{{ route('login') }}" method="post">
+                    @csrf
                     <div>
                         <h1>Connexion</h1><br>
                     </div>
